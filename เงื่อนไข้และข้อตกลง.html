@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QUALITY EXPRESS CO., LTD. - ใบเงื่อนไขและข้อตกลงแพ็กเกจท่องเที่ยว</title>
+<style>
+  :root{
+    --navy:#103b86; --blue:#1767c9; --light:#eef5ff; --line:#cad7ea;
+    --text:#183153; --muted:#667085; --paper:#fff; --bg:#edf2f7;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"Tahoma","Noto Sans Thai",Arial,sans-serif;background:var(--bg);color:var(--text)}
+  .app{display:grid;grid-template-columns:360px minmax(700px,1fr);min-height:100vh}
+  .panel{background:#fff;border-right:1px solid #d7deea;padding:18px;position:sticky;top:0;height:100vh;overflow:auto}
+  .brand{background:linear-gradient(135deg,#0d377f,#1b67c8);color:#fff;padding:16px;border-radius:14px;margin-bottom:16px}
+  .brand h1{font-size:18px;margin:0 0 4px}.brand p{font-size:12px;margin:0;opacity:.9}
+  .group{margin:14px 0 18px}.group h3{font-size:14px;margin:0 0 10px;color:#0f3d84}
+  label{display:block;font-size:12px;font-weight:700;margin:8px 0 5px}
+  input, textarea, select{width:100%;padding:9px 10px;border:1px solid #c9d3e0;border-radius:8px;font:inherit;font-size:13px;background:#fff}
+  textarea{min-height:70px;resize:vertical}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .buttons{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:15px}
+  button{border:0;border-radius:9px;padding:11px 10px;font-weight:700;cursor:pointer}
+  .primary{background:#1254ae;color:white}.secondary{background:#eaf2ff;color:#12458d}
+  .danger{background:#fff1f1;color:#b42318}.wide{grid-column:1/-1}
+  .workspace{padding:28px;overflow:auto}
+  .paper{width:210mm;min-height:297mm;background:var(--paper);margin:0 auto;box-shadow:0 10px 30px rgba(34,51,84,.15);padding:13mm 14mm}
+  .doc-head{text-align:center;border-bottom:2px solid var(--navy);padding-bottom:10px;margin-bottom:12px}
+  .company{font-size:17px;font-weight:800;color:var(--navy);letter-spacing:.2px}
+  .company-en{font-size:12px;color:#476486;margin-top:2px}
+  .doc-title{font-size:22px;font-weight:900;color:#0d3474;margin-top:9px}
+  .doc-sub{font-size:11px;color:#667085;margin-top:3px}
+  .info{display:grid;grid-template-columns:1fr 1fr;gap:7px 16px;background:#f7faff;border:1px solid #cbdaf0;border-radius:10px;padding:11px 12px;margin-bottom:12px}
+  .field{font-size:11.5px;line-height:1.55;border-bottom:1px dotted #92a7c5;padding-bottom:2px}
+  .field b{color:#163f83}
+  .section{border:1px solid #d4deec;border-radius:10px;padding:10px 12px;margin:8px 0}
+  .section h2{font-size:13.5px;margin:0 0 6px;color:#0f438f;display:flex;gap:7px;align-items:center}
+  .num{display:inline-flex;align-items:center;justify-content:center;width:23px;height:23px;border-radius:50%;background:#1655ad;color:#fff;font-size:12px;flex:none}
+  .section p,.section li{font-size:10.5px;line-height:1.5;margin:2px 0}
+  .section ul{margin:4px 0 0 17px;padding:0}
+  .notice{background:#fff8e8;border:1px solid #efcf83;border-radius:8px;padding:7px 9px;font-size:10.5px;line-height:1.45;margin-top:7px}
+  .change-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 15px}
+  .sign{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:13px}
+  .signbox{text-align:center;font-size:10.5px;padding-top:25px;border-top:1px solid #9aa9bd}
+  footer{text-align:center;margin-top:10px;background:#103b86;color:white;border-radius:8px;padding:8px;font-size:10.5px}
+  .muted{color:#667085}
+  @media(max-width:1000px){.app{grid-template-columns:1fr}.panel{position:relative;height:auto}.workspace{padding:10px}.paper{transform-origin:top left}}
+  @media print{
+    @page{size:A4;margin:0}
+    body{background:#fff}
+    .panel{display:none!important}
+    .workspace{padding:0}
+    .paper{box-shadow:none;margin:0;width:210mm;min-height:297mm;padding:10mm 12mm}
+    .section{break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="panel">
+    <div class="brand">
+      <h1>QUALITY EXPRESS CO., LTD.</h1>
+      <p>ระบบสร้างเอกสารเงื่อนไขแพ็กเกจท่องเที่ยว</p>
+    </div>
+
+    <div class="group">
+      <h3>ข้อมูลลูกค้า</h3>
+      <label>ชื่อลูกค้า</label><input id="customer" placeholder="ชื่อ-นามสกุล">
+      <label>เบอร์โทรศัพท์</label><input id="phone" placeholder="08x-xxx-xxxx">
+      <div class="row">
+        <div><label>ประเทศปลายทาง</label><input id="country" placeholder="เช่น ญี่ปุ่น"></div>
+        <div><label>จำนวนผู้เดินทาง</label><input id="travellers" type="number" min="1" placeholder="2"></div>
+      </div>
+      <label>สนามบินต้นทาง</label><input id="airport" placeholder="เช่น สุวรรณภูมิ">
+      <label>แพ็กเกจ/โปรแกรม</label><input id="package" placeholder="ชื่อแพ็กเกจ">
+      <div class="row">
+        <div><label>ราคาแพ็กเกจ/ท่าน</label><input id="price" type="number" min="0" placeholder="4999"></div>
+        <div><label>ชำระแล้ว</label><input id="paid" type="number" min="0" placeholder="0"></div>
+      </div>
+      <div class="row">
+        <div><label>วันเดินทางเดิม</label><input id="oldDate" type="date"></div>
+        <div><label>วันเดินทางใหม่</label><input id="newDate" type="date"></div>
+      </div>
+      <label>ผู้ดำเนินการแก้ไข</label><input id="staff" placeholder="ชื่อเจ้าหน้าที่">
+    </div>
+
+    <div class="group">
+      <h3>บันทึกการเปลี่ยนแปลง</h3>
+      <label>เหตุผลในการเปลี่ยนแปลง</label><textarea id="reason"></textarea>
+      <div class="row">
+        <div><label>ค่าใช้จ่ายเพิ่มเติม</label><input id="extra" type="number" min="0" placeholder="0"></div>
+        <div><label>ยอดเงินคืน (ถ้ามี)</label><input id="refund" type="number" min="0" placeholder="0"></div>
+      </div>
+      <label>เงื่อนไขเพิ่มเติม</label><textarea id="extraTerms"></textarea>
+      <label>ผู้อนุมัติ</label><input id="approver" placeholder="ชื่อผู้อนุมัติ">
+      <label>หมายเหตุ</label><textarea id="note"></textarea>
+    </div>
+
+    <div class="buttons">
+      <button class="primary wide" onclick="window.print()">พิมพ์ / บันทึก PDF</button>
+      <button class="secondary" onclick="saveData()">บันทึกข้อมูล</button>
+      <button class="secondary" onclick="loadData()">เรียกข้อมูลเดิม</button>
+      <button class="danger wide" onclick="clearData()">ล้างข้อมูล</button>
+    </div>
+  </aside>
+
+  <main class="workspace">
+    <div class="paper" id="document">
+      <div class="doc-head">
+        <div class="company">บริษัท ควอลิตี้ เอ็กซ์เพรส จำกัด</div>
+        <div class="company-en">QUALITY EXPRESS CO., LTD.</div>
+        <div class="doc-title">ใบเงื่อนไขและข้อตกลงการเข้าร่วมแพ็กเกจท่องเที่ยว</div>
+        <div class="doc-sub">กรุณาตรวจสอบรายละเอียดก่อนยืนยันการจองและชำระเงิน</div>
+      </div>
+
+      <div class="info">
+        <div class="field"><b>ชื่อลูกค้า:</b> <span data-out="customer">-</span></div>
+        <div class="field"><b>เบอร์โทรศัพท์:</b> <span data-out="phone">-</span></div>
+        <div class="field"><b>ประเทศปลายทาง:</b> <span data-out="country">-</span></div>
+        <div class="field"><b>สนามบินต้นทาง:</b> <span data-out="airport">-</span></div>
+        <div class="field"><b>จำนวนผู้เดินทาง:</b> <span data-out="travellers">-</span> ท่าน</div>
+        <div class="field"><b>แพ็กเกจ/โปรแกรม:</b> <span data-out="package">-</span></div>
+        <div class="field"><b>ราคาแพ็กเกจ:</b> <span data-money="price">0</span> บาท/ท่าน</div>
+        <div class="field"><b>จำนวนเงินที่ชำระแล้ว:</b> <span data-money="paid">0</span> บาท</div>
+        <div class="field"><b>ยอดคงเหลือ:</b> <span id="balance">0</span> บาท</div>
+        <div class="field"><b>วันที่แก้ไขข้อมูล:</b> <span id="today">-</span></div>
+        <div class="field"><b>วันเดินทางเดิม:</b> <span data-date="oldDate">-</span></div>
+        <div class="field"><b>วันเดินทางใหม่:</b> <span data-date="newDate">-</span></div>
+        <div class="field"><b>ผู้ดำเนินการแก้ไข:</b> <span data-out="staff">-</span></div>
+      </div>
+
+      <div class="section">
+        <h2><span class="num">1</span> การเลือกแพ็กเกจ</h2>
+        <p>ลูกค้าสามารถแจ้งประเทศ งบประมาณ จำนวนผู้เดินทาง วันที่ต้องการเดินทาง และสนามบินต้นทาง เพื่อให้เจ้าหน้าที่แนะนำโปรแกรมที่เหมาะสม โดยรายละเอียดและสิทธิประโยชน์จะเป็นไปตามแพ็กเกจที่ลูกค้าเลือก</p>
+      </div>
+
+      <div class="section">
+        <h2><span class="num">2</span> ราคาแพ็กเกจ</h2>
+        <p>ราคาที่ประชาสัมพันธ์เป็นราคาตามแพ็กเกจและเงื่อนไขของโปรแกรมที่เลือก ราคาอาจแตกต่างตามประเทศ เส้นทาง วันเดินทาง จำนวนผู้เดินทาง เที่ยวบิน ที่พัก และโปรโมชั่นในช่วงเวลานั้น</p>
+        <div class="notice">ก่อนชำระเงิน บริษัทจะแจ้งยอดที่ต้องชำระ รายการที่รวม และค่าใช้จ่ายที่จำเป็นเพิ่มเติมให้ลูกค้าทราบก่อนทุกครั้ง</div>
+      </div>
+
+      <div class="section">
+        <h2><span class="num">3</span> ค่าใช้จ่ายที่อาจไม่รวมในแพ็กเกจ</h2>
+        <ul>
+          <li>ตั๋วเครื่องบิน/ภาษีสนามบิน หากไม่ได้ระบุว่ารวม</li>
+          <li>น้ำหนักสัมภาระเพิ่มเติม อาหารนอกเหนือจากรายการ หรือค่าพักเดี่ยว/อัปเกรดห้อง</li>
+          <li>ค่าทิป ค่าเข้าสถานที่/กิจกรรมเพิ่มเติม ค่าเดินทางนอกโปรแกรม และค่าใช้จ่ายส่วนตัว</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2><span class="num">4</span> การเดินทางคนเดียว</h2>
+        <p>ผู้เดินทาง 1 ท่านสามารถสมัครเข้าร่วมกรุ๊ปกับผู้เดินทางท่านอื่นได้ หากมีเงื่อนไขแชร์ห้องหรือมีค่าพักเดี่ยวเพิ่มเติม บริษัทจะแจ้งก่อนยืนยันการจอง</p>
+      </div>
+
+      <div class="section">
+        <h2><span class="num">5</span> การยืนยันสิทธิ์และชำระเงิน</h2>
+        <p>เมื่อลูกค้าตรวจสอบรายละเอียดและยอมรับเงื่อนไขแล้ว สามารถชำระค่าจองตามยอดที่บริษัทแจ้ง และส่งหลักฐานการชำระเงิน พร้อมชื่อ-นามสกุล เบอร์โทรศัพท์ และข้อมูลที่จำเป็นสำหรับการจอง</p>
+        <div class="notice">กรุณาชำระเฉพาะบัญชีหรือช่องทางที่บริษัทแจ้งอย่างเป็นทางการเท่านั้น</div>
+      </div>
+
+      <div class="section">
+        <h2><span class="num">6</span> การเปลี่ยนแปลงวันเดินทาง</h2>
+        <p>ลูกค้าสามารถแจ้งขอเปลี่ยนวันเดินทางได้ โดยต้องให้บริษัทตรวจสอบก่อนดำเนินการ การเปลี่ยนแปลงอาจมีผลต่อราคาตั๋ว ค่าที่พัก ค่าธรรมเนียม ที่นั่งว่าง รายการท่องเที่ยว และเงื่อนไขของผู้ให้บริการที่เกี่ยวข้อง</p>
+        <div class="notice">การเปลี่ยนวันเดินทางมีผลสมบูรณ์เมื่อบริษัทได้ยืนยันเป็นลายลักษณ์อักษรหรือผ่านช่องทางติดต่ออย่างเป็นทางการแล้วเท่านั้น</div>
+      </div>
+
+      <div class="section">
+        <h2><span class="num">7</span> แบบบันทึกการเปลี่ยนแปลงวันเดินทาง</h2>
+        <div class="change-grid">
+          <div class="field"><b>วันเดินทางเดิม:</b> <span data-date="oldDate">-</span></div>
+          <div class="field"><b>วันเดินทางใหม่ที่ลูกค้าขอ:</b> <span data-date="newDate">-</span></div>
+          <div class="field"><b>เหตุผล:</b> <span data-out="reason">-</span></div>
+          <div class="field"><b>ค่าใช้จ่ายเพิ่มเติม:</b> <span data-money="extra">0</span> บาท</div>
+          <div class="field"><b>ยอดเงินคืน:</b> <span data-money="refund">0</span> บาท</div>
+          <div class="field"><b>ผู้อนุมัติ:</b> <span data-out="approver">-</span></div>
+          <div class="field" style="grid-column:1/-1"><b>เงื่อนไขเพิ่มเติม:</b> <span data-out="extraTerms">-</span></div>
+          <div class="field" style="grid-column:1/-1"><b>หมายเหตุ:</b> <span data-out="note">-</span></div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2><span class="num">8</span> หลังยืนยันการชำระเงิน</h2>
+        <p>เมื่อบริษัทตรวจสอบยอดเรียบร้อยแล้ว จะยืนยันสถานะการจองและแจ้งรายละเอียดทริป เช่น กำหนดการ วันนัดหมาย ที่พัก การเตรียมสัมภาระ เอกสารที่ต้องเตรียม จุดนัดหมาย และประกาศที่เกี่ยวข้อง</p>
+      </div>
+
+      <div class="section">
+        <h2><span class="num">9</span> สิทธิพิเศษหลังเข้าร่วมกลุ่ม</h2>
+        <p>สมาชิกอาจได้รับสิทธิ์เลือกซื้อบริการหรือกิจกรรมเสริมในราคาพิเศษ เช่น กิจกรรมเพิ่มเติม แพ็กเกจอาหาร เพิ่มน้ำหนักสัมภาระ อัปเกรดห้องพัก หรือบริการรับ-ส่งเพิ่มเติม ทั้งนี้บริการเสริมเป็นตัวเลือก เว้นแต่มีการระบุไว้ก่อนจองว่าเป็นค่าใช้จ่ายจำเป็น</p>
+      </div>
+
+      <div class="section">
+        <h2><span class="num">10</span> การยกเลิกการเดินทาง</h2>
+        <p>การเปลี่ยนชื่อ วันเดินทาง โปรแกรม หรือการยกเลิกหลังยืนยันการจอง จะเป็นไปตามเงื่อนไขของแพ็กเกจ สายการบิน โรงแรม และผู้ให้บริการที่เกี่ยวข้อง หากมีค่าธรรมเนียม บริษัทจะแจ้งให้ลูกค้าทราบก่อนดำเนินการ</p>
+      </div>
+
+      <div class="section">
+        <h2><span class="num">11</span> การยอมรับเงื่อนไข</h2>
+        <p>เมื่อลูกค้าชำระเงินหรือยืนยันการจอง ถือว่าได้ตรวจสอบและยอมรับรายละเอียด ราคา วันเดินทาง รายการที่รวม/ไม่รวม รวมถึงเงื่อนไขการเปลี่ยนแปลงและการยกเลิกของแพ็กเกจแล้ว</p>
+      </div>
+
+      <div class="sign">
+        <div class="signbox">ลายเซ็นลูกค้า / วันที่</div>
+        <div class="signbox">เจ้าหน้าที่บริษัท / วันที่</div>
+      </div>
+      <footer>ขอบพระคุณที่ไว้วางใจให้ QUALITY EXPRESS CO., LTD. ดูแลการเดินทางของคุณ</footer>
+    </div>
+  </main>
+</div>
+
+<script>
+const ids = ["customer","phone","country","travellers","airport","package","price","paid","oldDate","newDate","staff","reason","extra","refund","extraTerms","approver","note"];
+const moneyIds = ["price","paid","extra","refund"];
+const dateIds = ["oldDate","newDate"];
+
+function fmtMoney(v){
+  const n = Number(v || 0);
+  return new Intl.NumberFormat("th-TH",{maximumFractionDigits:0}).format(n);
+}
+function fmtDate(v){
+  if(!v) return "-";
+  const d = new Date(v+"T00:00:00");
+  return d.toLocaleDateString("th-TH",{day:"2-digit",month:"2-digit",year:"numeric"});
+}
+function update(){
+  ids.forEach(id=>{
+    document.querySelectorAll(`[data-out="${id}"]`).forEach(el=>el.textContent=document.getElementById(id).value || "-");
+  });
+  moneyIds.forEach(id=>{
+    document.querySelectorAll(`[data-money="${id}"]`).forEach(el=>el.textContent=fmtMoney(document.getElementById(id).value));
+  });
+  dateIds.forEach(id=>{
+    document.querySelectorAll(`[data-date="${id}"]`).forEach(el=>el.textContent=fmtDate(document.getElementById(id).value));
+  });
+  const travellers = Math.max(1, Number(document.getElementById("travellers").value || 1));
+  const price = Number(document.getElementById("price").value || 0);
+  const paid = Number(document.getElementById("paid").value || 0);
+  const bal = Math.max(0, price*travellers-paid);
+  document.getElementById("balance").textContent = fmtMoney(bal);
+  document.getElementById("today").textContent = new Date().toLocaleDateString("th-TH",{day:"2-digit",month:"2-digit",year:"numeric"});
+}
+function saveData(){
+  const data={}; ids.forEach(id=>data[id]=document.getElementById(id).value);
+  localStorage.setItem("qualityExpressTravelForm",JSON.stringify(data));
+  alert("บันทึกข้อมูลเรียบร้อยแล้ว");
+}
+function loadData(){
+  const raw=localStorage.getItem("qualityExpressTravelForm");
+  if(!raw){alert("ยังไม่มีข้อมูลที่บันทึกไว้");return;}
+  const data=JSON.parse(raw);
+  ids.forEach(id=>document.getElementById(id).value=data[id] ?? "");
+  update();
+}
+function clearData(){
+  if(!confirm("ต้องการล้างข้อมูลทั้งหมดใช่หรือไม่?")) return;
+  ids.forEach(id=>document.getElementById(id).value="");
+  localStorage.removeItem("qualityExpressTravelForm");
+  update();
+}
+ids.forEach(id=>document.getElementById(id).addEventListener("input",update));
+update();
+</script>
+</body>
+</html>
